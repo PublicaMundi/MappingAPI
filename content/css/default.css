@@ -1,0 +1,11 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #565656;
+    font-size: 1.1em;
+}
