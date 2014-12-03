@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
- 
+
+<!-- Necessary scripts -->
     <script src="lib/jQuery/jquery-2.1.0.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
 
-    <!--<link href="lib/build/lib/ol/ol.css" rel="stylesheet" />-->
-    <!--<script src="lib/build/lib/ol/ol.js"></script>-->
     <link rel="stylesheet" href="content/css/default.css" />
     
+<!-- PublicaMundi API script -->
     <script src="lib/PublicaMundi/build/publicamundi.js" data-library=""></script> 
 
 
-<!--    <link rel="stylesheet" href="lib/PublicaMundi/Leaflet/leaflet.css" />
+<!-- Leaflet Development scripts -->
+<!-- <link rel="stylesheet" href="lib/PublicaMundi/Leaflet/leaflet.css" />
     
     <script src="lib/PublicaMundi/Leaflet/leaflet-src.js" data-library=""></script> 
     <script src="lib/togeojson/togeojson.js" data-library=""></script> 
@@ -27,9 +28,25 @@
     <script src="lib/PublicaMundi/src/lib/leaflet/Layer.KML.js" data-library=""></script> 
     <script src="lib/PublicaMundi/src/lib/leaflet/Layer.WMS.js" data-library=""></script> 
     <script src="lib/PublicaMundi/src/lib/leaflet/Layer.WFS.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.Tile.js" data-library=""></script> -->
+    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.Tile.js" data-library=""></script>  -->
 
-    <!--<script src="lib/build/publicamundi.ol.js"></script>-->
+<!-- OpenLayers Development scripts -->
+<!--    <link rel="stylesheet" href=" lib/PublicaMundi/build/lib/ol/ol.css" />
+    
+    <script src="lib/PublicaMundi/ol3-latest/ol-debug.js" data-library=""></script> 
+    <script src="lib/ol3-layerswitcher/src/ol3-layerswitcher.js" data-library=""></script> 
+    <script src="lib/xmlToJson/xmlToJson.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/PublicaMundi.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/PublicaMundi.OpenLayers.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/Map.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/Layer.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/Map.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/Layer.GeoJson.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/Layer.KML.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/Layer.WMS.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/Layer.WFS.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/ol/Layer.Tile.js" data-library=""></script> -->
+
     </head>
 <body>
     <div id="popup"></div>
@@ -43,12 +60,9 @@
         if (features) {
             feature = features [0];
             }
-
         if (popup) {
-            var element = popup.getElement();
-            var coordinate = pixel;
-            popup.setPosition(coordinate);
-
+            var element = map.getOverlayElement(popup);
+            map.setOverlayPosition(popup, pixel); 
             $(document.getElementById('popup')).popover('destroy');
 
             var text; 
@@ -74,6 +88,8 @@
         target: 'map',
         center: [-10939408.106956497, 4561776.910611016],
         zoom: 3,
+        minZoom: 2,
+        maxZoom: 18,
         layers: [
         {
             title: 'Open Street Maps',
@@ -81,9 +97,9 @@
             url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         }]
     };
-    
+    var map;
     PublicaMundi.ready(function () {
-        var map = PublicaMundi.map(options);
+        map = PublicaMundi.map(options);
 
         map.setLayerControl(map.getLayers()[0]);
         popup = map.addOverlay(document.getElementById('popup'));
@@ -91,27 +107,26 @@
         $(document.getElementById('map')).click(function() { 
             $(document.getElementById('popup')).popover('destroy');
             });
-
+        var bbox;
+        
         // WMS Layer
         var blocks_layer = map.createLayer({
             title: 'USA Population',
             type: PublicaMundi.LayerType.WMS,
             url: 'http://demo.opengeo.org/geoserver/wms',
             params: { 'layers' : 'topp:states', 
-                        'transparent':true 
-                        }
+                      'transparent':true 
+                    }
         });
-        
-        //blocks_layer.setLayerExtent();
-        
+
         // GeoJSON Layer
-         map.createLayer({
+       var countries = map.createLayer({
             type: PublicaMundi.LayerType.GeoJSON,
             title: 'Countries',
             url: 'data/geojson/countries.geojson',
             click: onFeatureClick
             });
-
+        
         // WFS Layer
         var lakes = map.createLayer({
             title: 'Lakes',
@@ -120,15 +135,18 @@
             url: 'http://demo.opengeo.org/geoserver/wfs',
             params: { 'layers' : 'maps:ne_10m_lakes' }
             });
+        //lakes.setLayerExtent();
         
         // KML Layer
-        map.createLayer({
+        var earthquakes = map.createLayer({
             type: PublicaMundi.LayerType.KML,
             title: 'Earthquakes',
             url: 'data/kml/2012_Earthquakes_Mag5.kml',
             click: onFeatureClick
            });
+
         
            });
+    
 </script>
 </html>

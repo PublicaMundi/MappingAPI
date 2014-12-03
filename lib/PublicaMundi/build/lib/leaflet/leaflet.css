@@ -476,3 +476,20 @@
 	background: #fff;
 	border: 1px solid #666;
 	}
+
+/* div icon */
+
+.leaflet-div-icon {
+	background: #fff;
+	border: 1px solid #666;
+	}
+
+    /* Override to hide popups */
+
+    .hideparent{
+        visibility: hidden;
+    }
+    .hideparent .popover{
+        visibility: visible;
+        margin-top: 15px;
+    }
