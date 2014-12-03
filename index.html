@@ -2,76 +2,73 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-
-        .map {
-            width: 500px;
-            height: 350px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .ol-attribution ul, .ol-attribution a, .ol-attribution a:not([ie8andbelow]) {
-            color: black !important;
-        }
-    </style>
+ 
     <script src="lib/jQuery/jquery-2.1.0.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+
     <!--<link href="lib/build/lib/ol/ol.css" rel="stylesheet" />-->
     <!--<script src="lib/build/lib/ol/ol.js"></script>-->
-    <script src="lib/build/publicamundi.js" data-library=""></script>
+    <link rel="stylesheet" href="content/css/default.css" />
+    
+    <script src="lib/PublicaMundi/build/publicamundi.js" data-library=""></script> 
+
+
+<!--    <link rel="stylesheet" href="lib/PublicaMundi/Leaflet/leaflet.css" />
+    
+    <script src="lib/PublicaMundi/Leaflet/leaflet-src.js" data-library=""></script> 
+    <script src="lib/togeojson/togeojson.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/PublicaMundi.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/PublicaMundi.Leaflet.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/Map.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/Layer.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/Map.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.GeoJson.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.KML.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.WMS.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.WFS.js" data-library=""></script> 
+    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.Tile.js" data-library=""></script> -->
+
     <!--<script src="lib/build/publicamundi.ol.js"></script>-->
-    <script>
-
-        //var A = PublicaMundi.Class({
-        //    initialize: function (message) {
-        //        console.log('Class A initializing ...');
-        //        this._message = message;
-        //    },
-        //    print: function () {
-        //        console.log(this._message);
-        //        return false;
-        //    }
-        //});
-
-        //a = new A('Message A');
-        //a.print();
-
-        //console.log('a is of type A :' + (a instanceof A));
-
-        //var B = PublicaMundi.Class(A, {
-        //    initialize: function (message) {
-        //        A.prototype.initialize(message);
-
-        //        console.log('Class B initializing ...');
-        //    }
-        //});
-
-        //b = new B('Message B');
-        //b.print();
-
-        //console.log('b is of type A :' + (b instanceof A));
-        //console.log('b is of type B :' + (b instanceof B));
-    </script>
-</head>
+    </head>
 <body>
+    <div id="popup"></div>
     <div id="map" class="map"></div>
 </body>
 <script>
     PublicaMundi.noConflict();
 
-    var onFeatureClick = function (features) {
-        if ((features) && (features.length > 0)) {
-            var content = '';
-            for (var i = 0; i < features.length; i++) {
-                content += JSON.stringify(features[i]) + '\n\n';
+    var popup;
+    var onFeatureClick = function(features, pixel) {
+        if (features) {
+            feature = features [0];
             }
-            alert(content);
-        }
-    };
+
+        if (popup) {
+            var element = popup.getElement();
+            var coordinate = pixel;
+            popup.setPosition(coordinate);
+
+            $(document.getElementById('popup')).popover('destroy');
+
+            var text; 
+            if (feature['name']) {
+                text = feature['name'];
+            }
+            else {
+                text = JSON.stringify(feature);
+            }
+
+            $(element).popover({
+                'placement' : 'top',
+                'animation' : true,
+                'html' : true,
+                'content' : text
+                }).attr('data-original-title');
+
+                $(element).popover('show');
+            }
+          };
 
     var options = {
         target: 'map',
@@ -82,30 +79,56 @@
             title: 'Open Street Maps',
             type: PublicaMundi.LayerType.TILE,
             url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        }, {
-            title: 'Crops',
-            type: PublicaMundi.LayerType.WMS,
-            url: 'http://webservices.nationalatlas.gov/wms/agriculture',
-            params: { 'LAYERS': 'crop_1' }
         }]
     };
-
+    
     PublicaMundi.ready(function () {
         var map = PublicaMundi.map(options);
 
+        map.setLayerControl(map.getLayers()[0]);
+        popup = map.addOverlay(document.getElementById('popup'));
+        
+        $(document.getElementById('map')).click(function() { 
+            $(document.getElementById('popup')).popover('destroy');
+            });
 
-        map.createLayer({
+        // WMS Layer
+        var blocks_layer = map.createLayer({
+            title: 'USA Population',
+            type: PublicaMundi.LayerType.WMS,
+            url: 'http://demo.opengeo.org/geoserver/wms',
+            params: { 'layers' : 'topp:states', 
+                        'transparent':true 
+                        }
+        });
+        
+        //blocks_layer.setLayerExtent();
+        
+        // GeoJSON Layer
+         map.createLayer({
             type: PublicaMundi.LayerType.GeoJSON,
             title: 'Countries',
             url: 'data/geojson/countries.geojson',
             click: onFeatureClick
-        });
+            });
 
-        map.geoJSON({
+        // WFS Layer
+        var lakes = map.createLayer({
+            title: 'Lakes',
+            type: PublicaMundi.LayerType.WFS,
+            click: onFeatureClick,
+            url: 'http://demo.opengeo.org/geoserver/wfs',
+            params: { 'layers' : 'maps:ne_10m_lakes' }
+            });
+        
+        // KML Layer
+        map.createLayer({
+            type: PublicaMundi.LayerType.KML,
             title: 'Earthquakes',
-            url: 'data/geojson/earthquakes.json',
+            url: 'data/kml/2012_Earthquakes_Mag5.kml',
             click: onFeatureClick
-        });
-    });
+           });
+        
+           });
 </script>
 </html>
