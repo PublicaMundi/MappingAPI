@@ -1,152 +1,164 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
-
-<!-- Necessary scripts -->
+    <link href="lib/codemirror/codemirror.css" rel="stylesheet" />
+    <script src="lib/codemirror/codemirror.js"></script>
+    <script src="lib/codemirror/javascript.js"></script>
     <script src="lib/jQuery/jquery-2.1.0.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
 
-    <link rel="stylesheet" href="content/css/default.css" />
+<title>Mapping API Demo</title>
+<style>
+@font-face { 
+    font-family: 'ACMuli';
+    src: url('content/fonts/ACMuli/AC-Muli.ttf')
+}
+@font-face { 
+    font-family: 'ACMuliLight';
+    src: url('content/fonts/ACMuliLight/AC-MuliLight.ttf')
+}
+
+body{
+    font-size: 14px;
+    color: #4E59A4;
+    font-family: 'ACMuli';
+    }
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    }
+.btn {
+    font-size: 14px;
+    width: 102px;
+    height: 30px;
+    //min-width: 200px;
+    //min-height:50px;
+    border-radius: 0;
+    border: 2px #4E59A4 solid;
+    background: #fff;
+    color: #4E59A4;
+    text-shadow: none;
+    box-shadow: none;
+}
+.btn:hover, .btn-hover{
+    cursor: pointer;
+    border-radius: 0;
+    background: #4E59A4;
+    color: #fff !important;
+    border: 2px #4E59A4 solid;
+}
+
+
+.globe{ 
+    width:40px;
+    height:40px;
+    margin-right:10px;
+    }
+.logo{
+    display: block;
+    }
+.title{
+    display: block;
+    margin-left: 30px;
+}
+.menu{
+    margin-bottom: 40px;
+    }
+.menu .btn{
+    margin-left: 20px;
+
+}
+.continue{
+    display: block;
+    float: left;
+    width: 48vw;
+    position: relative;
+    }
+.continue button{
+    margin-left:20px;
+    margin-top:20px;
+    }
+#map-container{
+    padding: 0; 
+    border: none; 
+    margin: 0; 
+    width: 45vw;
+    height: 400px; 
+    float:right;
+    margin-right:40px;
+}
+#sample{
+    position : relative;
+    display: block;
+    width: 500px;
+    font-size: 13px;
+    font-family: 'ACMuliLight'
+    }
+.CodeMirror{
+    height: 80vh;}
+
+</style>
     
-<!-- PublicaMundi API script -->
-    <script src="lib/PublicaMundi/build/publicamundi.js" data-library=""></script> 
-
-
-<!-- Leaflet Development scripts -->
-<!-- <link rel="stylesheet" href="lib/PublicaMundi/Leaflet/leaflet.css" />
-    
-    <script src="lib/PublicaMundi/Leaflet/leaflet-src.js" data-library=""></script> 
-    <script src="lib/togeojson/togeojson.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/PublicaMundi.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/PublicaMundi.Leaflet.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/Map.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/Layer.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Map.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.GeoJson.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.KML.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.WMS.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.WFS.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/leaflet/Layer.Tile.js" data-library=""></script>  -->
-
-<!-- OpenLayers Development scripts -->
-<!--    <link rel="stylesheet" href=" lib/PublicaMundi/build/lib/ol/ol.css" />
-    
-    <script src="lib/PublicaMundi/ol3-latest/ol-debug.js" data-library=""></script> 
-    <script src="lib/ol3-layerswitcher/src/ol3-layerswitcher.js" data-library=""></script> 
-    <script src="lib/xmlToJson/xmlToJson.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/PublicaMundi.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/PublicaMundi.OpenLayers.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/Map.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/Layer.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/Map.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/Layer.GeoJson.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/Layer.KML.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/Layer.WMS.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/Layer.WFS.js" data-library=""></script> 
-    <script src="lib/PublicaMundi/src/lib/ol/Layer.Tile.js" data-library=""></script> -->
-
     </head>
 <body>
-    <div id="popup"></div>
-    <div id="map" class="map"></div>
-</body>
+    <div class="container">
+    <div class="logo"> <a href="/"><img class="globe" src="images/Geodata_logo.svg"><img src="images/geodata-biglogo.png"></a> </div>
+    
+    <div class="menu">
+    <span class="title"><h2>Mapping API Demo</h2></span>
+        <a href="#"><button id="leaflet" class="btn">Leaflet</button></a>
+        <a href="#"><button id="openlayers" class="btn">OpenLayers</button></a>
+    </div>
+    <div class="continue">
+        <div class="clearfix" style="">
+            <textarea id="sample">
+
+            </textarea>
+            </div>
+            </div>
+
+        <iframe id="map-container" src="openlayers.html" ></iframe>
+            </div>
 <script>
-    PublicaMundi.noConflict();
+    var editor = CodeMirror.fromTextArea(document.getElementById("sample"), {
+        lineNumbers: true,
+        mode: "text/javascript",
+        matchBrackets: true,
+        lineWrapping: true,
+    });
+    var script; 
+    var hscript;
+    $("#map-container").load(function(){
 
-    var popup;
-    var onFeatureClick = function(features, pixel) {
-        if (features) {
-            feature = features [0];
-            }
-        if (popup) {
-            var element = map.getOverlayElement(popup);
-            map.setOverlayPosition(popup, pixel); 
-            $(document.getElementById('popup')).popover('destroy');
-
-            var text; 
-            if (feature['name']) {
-                text = feature['name'];
-            }
-            else {
-                text = JSON.stringify(feature);
-            }
-
-            $(element).popover({
-                'placement' : 'top',
-                'animation' : true,
-                'html' : true,
-                'content' : text
-                }).attr('data-original-title');
-
-                $(element).popover('show');
-            }
-          };
-
-    var options = {
-        target: 'map',
-        center: [-10939408.106956497, 4561776.910611016],
-        zoom: 3,
-        minZoom: 2,
-        maxZoom: 18,
-        layers: [
-        {
-            title: 'Open Street Maps',
-            type: PublicaMundi.LayerType.TILE,
-            url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        }]
-    };
-    var map;
-    PublicaMundi.ready(function () {
-        map = PublicaMundi.map(options);
-
-        map.setLayerControl(map.getLayers()[0]);
-        popup = map.addOverlay(document.getElementById('popup'));
-        
-        $(document.getElementById('map')).click(function() { 
-            $(document.getElementById('popup')).popover('destroy');
-            });
-        var bbox;
-        
-        // WMS Layer
-        var blocks_layer = map.createLayer({
-            title: 'USA Population',
-            type: PublicaMundi.LayerType.WMS,
-            url: 'http://demo.opengeo.org/geoserver/wms',
-            params: { 'layers' : 'topp:states', 
-                      'transparent':true 
-                    }
+        hscript = $("#map-container").contents().find('#header-script').html();
+        script = $("#map-container").contents().find('#common-script').text();
+        editor.setValue(hscript+script);
         });
 
-        // GeoJSON Layer
-       var countries = map.createLayer({
-            type: PublicaMundi.LayerType.GeoJSON,
-            title: 'Countries',
-            url: 'data/geojson/countries.geojson',
-            click: onFeatureClick
-            });
-        
-        // WFS Layer
-        var lakes = map.createLayer({
-            title: 'Lakes',
-            type: PublicaMundi.LayerType.WFS,
-            click: onFeatureClick,
-            url: 'http://demo.opengeo.org/geoserver/wfs',
-            params: { 'layers' : 'maps:ne_10m_lakes' }
-            });
-        //lakes.setLayerExtent();
-        
-        // KML Layer
-        var earthquakes = map.createLayer({
-            type: PublicaMundi.LayerType.KML,
-            title: 'Earthquakes',
-            url: 'data/kml/2012_Earthquakes_Mag5.kml',
-            click: onFeatureClick
-           });
+    // On leaflet button click
+    $("#leaflet").on("click", function(){
 
+        $("#map-container").attr('src',"leaflet");
         
-           });
-    
+        $("#map-container").load(function(){
+            hscript = $("#map-container").contents().find('#header-script').html();
+            script = $("#map-container").contents().find('#common-script').text();
+            editor.setValue(hscript+script);
+            });
+        });
+
+    // On openlayers button click
+    $("#openlayers").on("click", function(){
+       
+       $("#map-container").attr('src',"openlayers"); 
+        $("#map-container").load(function(){
+        
+            hscript = $("#map-container").contents().find('#header-script').html();
+            script = $("#map-container").contents().find('#common-script').text();
+            editor.setValue(hscript+script);
+            });
+        });
+
 </script>
+
+</body>
 </html>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>archaia_theatra</name>
+<Schema name="archaia_theatra" id="archaia_theatra">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+	<SimpleField name="theatro" type="string"></SimpleField>
+	<SimpleField name="y" type="int"></SimpleField>
+	<SimpleField name="x" type="int"></SimpleField>
+</Schema>
+  <Placemark>
+	<name>Διονύσου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Διονύσου</SimpleData>
+		<SimpleData name="y">4202275</SimpleData>
+		<SimpleData name="x">475936</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>23.727729991719798,37.970382987244818</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο των Γιτάνων</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο των Γιτάνων</SimpleData>
+		<SimpleData name="y">4386231</SimpleData>
+		<SimpleData name="x">181924</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>20.299110026478086,39.569454954408862</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ωδείο Μεσσήνης (Εκκλησιαστήριο)</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Ωδείο Μεσσήνης (Εκκλησιαστήριο)</SimpleData>
+		<SimpleData name="y">4116106</SimpleData>
+		<SimpleData name="x">315293</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.921109994025713,37.175764990271396</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Βεργίνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Βεργίνας</SimpleData>
+		<SimpleData name="y">4482002</SimpleData>
+		<SimpleData name="x">357613</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.321943988999461,40.479111983188922</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Ασκληπιείου Επιδαύρου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Ασκληπιείου Επιδαύρου</SimpleData>
+		<SimpleData name="y">4482002</SimpleData>
+		<SimpleData name="x">357613</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.321943988999461,40.479111983188922</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Ερέτριας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Ερέτριας</SimpleData>
+		<SimpleData name="y">4249849</SimpleData>
+		<SimpleData name="x">481567</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>23.790614991050941,38.399274986328386</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Φιλίππων</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Φιλίππων</SimpleData>
+		<SimpleData name="y">4539997</SimpleData>
+		<SimpleData name="x">523922</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.286286986684178,41.013397980776766</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο του Θυρρείου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο του Θυρρείου</SimpleData>
+		<SimpleData name="y">4305239</SimpleData>
+		<SimpleData name="x">238140</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>20.983923992266089,38.859656987420479</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Καλυδώνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Καλυδώνας</SimpleData>
+		<SimpleData name="y">4249624</SimpleData>
+		<SimpleData name="x">284170</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.531121992610643,38.371425988067479</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Μακύνειας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Μακύνειας</SimpleData>
+		<SimpleData name="y">4247472</SimpleData>
+		<SimpleData name="x">301039</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.724680992509001,38.355955987960584</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Οινιαδών</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Οινιαδών</SimpleData>
+		<SimpleData name="y">4254709</SimpleData>
+		<SimpleData name="x">255267</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.198838992764561,38.409767988218945</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Νέας Πλευρώνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Νέας Πλευρώνας</SimpleData>
+		<SimpleData name="y">4254640</SimpleData>
+		<SimpleData name="x">273597</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.408592992628204,38.413970988065351</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Στράτου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Στράτου</SimpleData>
+		<SimpleData name="y">4283472</SimpleData>
+		<SimpleData name="x">266651</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.319489992321717,38.671735987590338</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Φθιώτιδων Θηβών</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Φθιώτιδων Θηβών</SimpleData>
+		<SimpleData name="y">4347955</SimpleData>
+		<SimpleData name="x">394191</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.775038990473739,39.277098985302885</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Δημητριάδος</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Δημητριάδος</SimpleData>
+		<SimpleData name="y">4355135</SimpleData>
+		<SimpleData name="x">407183</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.924646990270517,39.343271985060056</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Λάρισας Α'</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Λάρισας Α'</SimpleData>
+		<SimpleData name="y">4388784</SimpleData>
+		<SimpleData name="x">363871</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.415316990188703,39.640627984822899</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Λάρισας Β'</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Λάρισας Β'</SimpleData>
+		<SimpleData name="y">4388767</SimpleData>
+		<SimpleData name="x">363576</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.411883990191409,39.64042998482568</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Απτέρας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Απτέρας</SimpleData>
+		<SimpleData name="y">3923951</SimpleData>
+		<SimpleData name="x">512658</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.141152994972678,35.461569992039983</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Λευκάδας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Λευκάδας</SimpleData>
+		<SimpleData name="y">4300560</SimpleData>
+		<SimpleData name="x">213967</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>20.707693992502573,38.810042987693173</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Μυτιλήνης</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Μυτιλήνης</SimpleData>
+		<SimpleData name="y">4331860</SimpleData>
+		<SimpleData name="x">720070</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.546980987908618,39.110678982837165</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Αλάσαρνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Αλάσαρνας</SimpleData>
+		<SimpleData name="y">4074700</SimpleData>
+		<SimpleData name="x">779868</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.137613991025621,36.779355986879125</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Πόλης Κω</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Πόλης Κω</SimpleData>
+		<SimpleData name="y">4087011</SimpleData>
+		<SimpleData name="x">792793</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.286970990760299,36.886245986532209</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Ισθμού-Κεφάλου Κω</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Ισθμού-Κεφάλου Κω</SimpleData>
+		<SimpleData name="y">4068736</SimpleData>
+		<SimpleData name="x">763843</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.95621099122787,36.730259987138091</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ωδείο της Κω</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Ωδείο της Κω</SimpleData>
+		<SimpleData name="y">4087387</SimpleData>
+		<SimpleData name="x">792574</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.284658990756757,36.889698986527613</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Στάδιο Θεσσαλονίκης</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Στάδιο Θεσσαλονίκης</SimpleData>
+		<SimpleData name="y">4498066</SimpleData>
+		<SimpleData name="x">410992</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.9492909883073,40.631232982450769</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ωδείο Θεσσαλονίκης</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Ωδείο Θεσσαλονίκης</SimpleData>
+		<SimpleData name="y">4498788</SimpleData>
+		<SimpleData name="x">410727</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.946061988299725,40.637713982439998</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ελληνιστικό Θέατρο Δίου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Ελληνιστικό Θέατρο Δίου</SimpleData>
+		<SimpleData name="y">4447729</SimpleData>
+		<SimpleData name="x">371476</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.492317989339508,40.172708983689716</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Μίεζας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Μίεζας</SimpleData>
+		<SimpleData name="y">4500658</SimpleData>
+		<SimpleData name="x">341095</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.122473988893351,40.644103982991872</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Αμφίπολης</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Αμφίπολης</SimpleData>
+		<SimpleData name="y">4518613</SimpleData>
+		<SimpleData name="x">487026</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>23.847927987330952,40.821010981454549</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Σικυώνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Σικυώνας</SimpleData>
+		<SimpleData name="y">4204551</SimpleData>
+		<SimpleData name="x">386615</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.710574992390207,37.984138987993539</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ρωμαϊκό Θέατρο Χερσονήσου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Ρωμαϊκό Θέατρο Χερσονήσου</SimpleData>
+		<SimpleData name="y">3909008</SimpleData>
+		<SimpleData name="x">626140</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>25.389339994350557,35.31893299128626</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Μινωϊκό Ανάκτορο Κνωσσού</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Μινωϊκό Ανάκτορο Κνωσσού</SimpleData>
+		<SimpleData name="y">3906397</SimpleData>
+		<SimpleData name="x">605602</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>25.163099994531049,35.297780991519708</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Μινωϊκό Ανάκτορο Φαιστού</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Μινωϊκό Ανάκτορο Φαιστού</SimpleData>
+		<SimpleData name="y">3878798</SimpleData>
+		<SimpleData name="x">574075</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.813914995099399,35.051771992315295</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Ρωμαϊκό Ωδείο Γόρτυνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Ρωμαϊκό Ωδείο Γόρτυνας</SimpleData>
+		<SimpleData name="y">3880188</SimpleData>
+		<SimpleData name="x">586182</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.94680199499696,35.063346992179383</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Γόρτυνας (Μεγάλο)</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Γόρτυνας (Μεγάλο)</SimpleData>
+		<SimpleData name="y">3880240</SimpleData>
+		<SimpleData name="x">586047</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.945326994997274,35.063821992179612</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Γόρτυνας (Μικρό)</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Γόρτυνας (Μικρό)</SimpleData>
+		<SimpleData name="y">3879789</SimpleData>
+		<SimpleData name="x">586454</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.949746995000005,35.059728992184162</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αμφιθέατρο Γόρτυνας</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αμφιθέατρο Γόρτυνας</SimpleData>
+		<SimpleData name="y">3879431</SimpleData>
+		<SimpleData name="x">586752</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>24.952976995002363,35.056470992188132</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Δήλου</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Δήλου</SimpleData>
+		<SimpleData name="y">4139378</SimpleData>
+		<SimpleData name="x">612094</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>25.268103991468571,37.396984987202131</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Μεσσήνης</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Μεσσήνης</SimpleData>
+		<SimpleData name="y">4116349</SimpleData>
+		<SimpleData name="x">315092</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.918786994024188,37.177919990268663</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>Αρχαίο Θέατρο Αμφιλοχικού Άργους</name>
+	<ExtendedData><SchemaData schemaUrl="#archaia_theatra">
+		<SimpleData name="theatro">Αρχαίο Θέατρο Αμφιλοχικού Άργους</SimpleData>
+		<SimpleData name="y">4312060</SimpleData>
+		<SimpleData name="x">256005</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.18714499204555,38.926188987149779</coordinates></Point>
+  </Placemark>
+</Folder></Document></kml>
