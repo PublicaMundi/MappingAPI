@@ -137,7 +137,7 @@ body{
     // On leaflet button click
     $("#leaflet").on("click", function(){
 
-        $("#map-container").attr('src',"leaflet");
+        $("#map-container").attr('src',"leaflet.html");
         
         $("#map-container").load(function(){
             hscript = $("#map-container").contents().find('#header-script').html();
@@ -149,7 +149,7 @@ body{
     // On openlayers button click
     $("#openlayers").on("click", function(){
        
-       $("#map-container").attr('src',"openlayers"); 
+       $("#map-container").attr('src',"openlayers.html"); 
         $("#map-container").load(function(){
         
             hscript = $("#map-container").contents().find('#header-script').html();
