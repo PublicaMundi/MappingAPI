@@ -1,1 +1,0 @@
-﻿{"center":[-10939408.106956497,4561776.910611016],"zoom":4,"layers":[{"title":"Open Street Maps","type":"Tile","url":"http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"},{"title":"Crops","type":"WMS","url":"http://webservices.nationalatlas.gov/wms/agriculture","params":{"LAYERS":"crop_1"}}]}
