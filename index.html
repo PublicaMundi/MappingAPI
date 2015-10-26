@@ -116,45 +116,58 @@ body{
 
         <iframe id="map-container" src="openlayers.html" ></iframe>
             </div>
-<script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("sample"), {
-        lineNumbers: true,
-        mode: "text/javascript",
-        matchBrackets: true,
-        lineWrapping: true,
+            
+    <script>
+    $(document).ready(function(){
+        var editor = CodeMirror.fromTextArea(document.getElementById("sample"), {
+            lineNumbers: true,
+            mode: "text/javascript",
+            matchBrackets: true,
+            lineWrapping: true,
+        });
+        //var script = $("#map-container").contents().find('#common-script').text();
+        var script;
+        var hscript;
+
+        $.ajax({
+                url: 'common-script.js',
+              dataType: "text",
+              success: function(response){
+                console.log(response); 
+                script = response;
+                $("#map-container").load(function(){
+
+                hscript = $("#map-container").contents().find('#header-script').html();
+                //script = $("#map-container").contents().find('#common-script').text();
+                editor.setValue(hscript+script);
+                });
+            },
+        });
+
+        // On leaflet button click
+        $("#leaflet").on("click", function(){
+
+            $("#map-container").attr('src',"leaflet.html");
+            
+            $("#map-container").load(function(){
+                hscript = $("#map-container").contents().find('#header-script').html();
+                //script = $("#map-container").contents().find('#common-script').text();
+                editor.setValue(hscript+script);
+                });
+            });
+
+        // On openlayers button click
+        $("#openlayers").on("click", function(){
+        
+        $("#map-container").attr('src',"openlayers.html"); 
+            $("#map-container").load(function(){
+            
+                hscript = $("#map-container").contents().find('#header-script').html();
+                //script = $("#map-container").contents().find('#common-script').text();
+                editor.setValue(hscript+script);
+                });
+            });
     });
-    var script; 
-    var hscript;
-    $("#map-container").load(function(){
-
-        hscript = $("#map-container").contents().find('#header-script').html();
-        script = $("#map-container").contents().find('#common-script').text();
-        editor.setValue(hscript+script);
-        });
-
-    // On leaflet button click
-    $("#leaflet").on("click", function(){
-
-        $("#map-container").attr('src',"leaflet.html");
-        
-        $("#map-container").load(function(){
-            hscript = $("#map-container").contents().find('#header-script').html();
-            script = $("#map-container").contents().find('#common-script').text();
-            editor.setValue(hscript+script);
-            });
-        });
-
-    // On openlayers button click
-    $("#openlayers").on("click", function(){
-       
-       $("#map-container").attr('src',"openlayers.html"); 
-        $("#map-container").load(function(){
-        
-            hscript = $("#map-container").contents().find('#header-script').html();
-            script = $("#map-container").contents().find('#common-script').text();
-            editor.setValue(hscript+script);
-            });
-        });
 
 </script>
 
