@@ -27,7 +27,7 @@
     var options = {
         target: 'map',
         center: [2548716, 4643375],
-        zoom: 1,
+        zoom: 6,
         minZoom: 2,
         maxZoom: 18,
         layerControl: true,        
