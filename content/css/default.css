@@ -37,14 +37,6 @@ a {
     color: black !important;
 }
 
-/ * Layer Switcher */
-
-.ol-control button {
-    background: red !important;
-    width: 35px !important;
-    height: 35px !important;
-    }
-
 /* Info Overlay */
 
  .tooltip.in {
@@ -81,7 +73,7 @@ a {
      -webkit-border-radius:3px 3px 3px 3px;
      -moz-border-radius: 3px 3px 3px 3px; 
      overflow: hidden;
-     z-index: 15;
+     //z-index: 15;
 
  }
  .popover.top > .arrow {
@@ -108,4 +100,5 @@ a {
  .tooltip-inner>div:first-child {
      font-weight: bold;
 
+    }
 
