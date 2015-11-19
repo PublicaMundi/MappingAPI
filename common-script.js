@@ -27,13 +27,14 @@
     var options = {
         target: 'map',
         center: [2548716, 4643375],
-        zoom: 6,
+        zoom: 1,
         minZoom: 2,
         maxZoom: 18,
         layerControl: true,        
         layers: [
         {
             title: 'Open Street Maps',
+            switcher: 'base',
             type: PublicaMundi.LayerType.TILE,
             url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         }
@@ -74,6 +75,7 @@
             name: 'theaters',
             type: PublicaMundi.LayerType.KML,
             click: onFeatureClick,
+            //center: [2548716, 4643375],
             url: 'data/kml/archaia_theatra.kml',
             style: {
                 normal:{
@@ -101,13 +103,14 @@
 
                 for (var idx in result.Layer){
                     var layer = result.Layer[idx];
-                    if (layer.Title == 'galazies_shmaies_2010'){
+                    if (layer.Title === 'galazies_shmaies_2008'){
                     map.createLayer({
                         title: layer.Title,
                         type: PublicaMundi.LayerType.WFS,
                         click: onFeatureClick,
                         url: 'http://labs.geodata.gov.gr/geoserver/wfs',
-                        visible: true,
+                        fitToMap: true,
+                        visible: false,
                         params: { 'layers' : layer.Name },
                         style:{ normal:{
                                 color: 'black',
