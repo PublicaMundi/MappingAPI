@@ -109,18 +109,17 @@
                         type: PublicaMundi.LayerType.WFS,
                         click: onFeatureClick,
                         url: 'http://labs.geodata.gov.gr/geoserver/wfs',
-                        fitToMap: true,
                         visible: false,
                         params: { 'layers' : layer.Name },
                         style:{ normal:{
                                 color: 'black',
                                 weight: 1,
                                 radius: 6,
-                                fillColor: '#0079bf',
+                                fillColor: '#87beed',
                                 fillOpacity: 0.9
                                 },
                                 highlight:{
-                                    fillColor: 'black',
+                                    fillColor: '#095ba1',
                                 }
                             }
                         });
